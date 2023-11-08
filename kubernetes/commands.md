@@ -1,3 +1,6 @@
+# show all cluster in k'8
+kubectl get nodes 
+
 kubectl get pods -n namespace -o wide
 
 kubectl get all --all
