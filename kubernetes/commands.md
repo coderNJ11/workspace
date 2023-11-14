@@ -14,3 +14,6 @@ kubectl get pods -n kube-system
 
 # find security issues with yamls kubernetes resource
 snyk iac test deployment.yaml 
+
+# create deployment
+kubectl create deployment --dry-run=client --image locahost:5000/explorecalifornia.com --output=yaml > deployment.yaml
