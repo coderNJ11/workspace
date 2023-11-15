@@ -1,13 +1,17 @@
----
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-service
-  namespace: development
+  labels:
+    app: explorecalirofnia.com
+  name: explorecalirofnia-svc
 spec:
-  selector:
-    app: pod-info
   ports:
-  - port: 80
-    targetPort: 3000
-  type: LoadBalancer
+  - name: 80-80
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: explorecalirofnia.com
+  type: ClusterIP
+status:
+  loadBalancer: {}
