@@ -48,6 +48,26 @@ PLACEMENT GROUPS:
     # Root Volume - Must be EBS , encrypted , not instance store , large
     # On Demand , Reserved and Spot Instances
     # Not To be Hibernated more than 60 days
-    
+
+
+
+- EBS Volume
+    # Elastic Block Store is a newtwork drive you attach your instances while you run
+    # Allows to presist the data
+    # Can be attach or detached
+    # Locked to an Availability Zone , to move across AZ you need to snapshot the volume
+    # capcpity is measured in terms of GBS and IOPS
+    # As many EBS volumes can be attahced 
+    # Attached on Demand , you can leave them unattached
+    # Delete on termination on EBS volume means EC2 instance is terminated then by default root volume is deleted automatically.
+    # For all NON root  volumes Delete on termination is optionally enabled or diabled , by default its ENABLED
+
+
+- EBS Snapshots
+    # Make Snapshot and move to Archive 
+    # Takes within 24 to 72 hrs for restoring from archive
+    # Deletion policy to EBS snapshots , Recycle Bin
+    # Fast Snaspshot restore FSR : force full initalization of snapshot to have no latency.
+    # For Disaster recovery stargtegy , Retetion rules
 
 
