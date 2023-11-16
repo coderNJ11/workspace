@@ -70,4 +70,28 @@ PLACEMENT GROUPS:
     # Fast Snaspshot restore FSR : force full initalization of snapshot to have no latency.
     # For Disaster recovery stargtegy , Retetion rules
 
+- AMI 
+    # AMI amaon machine Images
+    # Customization for EC2 instamce
+    # built for specfic regions and can be copied acrosss as images
+    # pre packaged and faster boot time
+    # vendors can sell market place AMI on AWS market place
+    # start EC2 instance - -> Stop instance for data intgerity --> Build AMI (also create EBS snapshots) --> launch instances of AMI's
+    # launch EC2 instance --> create AMI after shut down --> migrate to different region --> create EC2 instance from it
+
+- EC2 instance store
+    # hard drive attached to Ec2 instance 
+    # for Higher IOPS perofrmance
+    # Ephermeral store 
+    # not durable for persistence
+    # temproary content
+    # good for cache buffer
+    # Risk of data loss
+    # I3 instance all have instance store attached to the EC2 instance.
+
+
+
+
+
+
 
