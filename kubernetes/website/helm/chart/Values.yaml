@@ -1,0 +1,6 @@
+appName: explorcalifornia.com
+imageName: localhost:5000/explorecalirofnia.com
+replicas: 2
+serviceName: explorecalifornia-svc
+sourcePort: 80
+imagePullSecretName: explorecalifornia

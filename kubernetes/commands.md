@@ -45,3 +45,43 @@ nodes:
     nodeRegistration:
       kubeletExtraArgs:
         node-labels: "ingress-ready=true"
+
+# helm
+helm show all ./chart
+
+helm install explore-california-website ./chart
+
+helm uninstall explore-california-websiste
+
+helm install explore-california-websiste ./chart
+
+
+# delete all using helm
+kubectl delete all -l app=explorecalifornia.com
+
+# make
+make install app
+
+# AWS
+aws ecr describe-repositories
+
+password = "${aws ecr get-login-password}"
+
+docker login "$registry" --username AWS --pasword "$password"
+
+docker tag explorecalifornia.com:latest localhost:5000/latest
+
+kubcetl create secret docker-registery explore-california --docker-server-$registry --docker-username=AWS --docker-password=$password
+
+helm upgrade --atomic --install explore-california-website ./chart --charts ./chart/values-aws.yaml
+
+helm uninstall explore-california-website
+
+make delete_kind)cluster
+
+
+
+
+
+
+

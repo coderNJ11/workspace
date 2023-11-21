@@ -1,15 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: explorcalifornia.com
+  name: {{.Values.appName}}
 spec:
   rules:
-  - host: explorecalifornia.com
+  - host: {{.Values.appName}}
     http:
       paths:
       - backend:
           service:
-            name: explorecalifornia-svc
+            name: {{.Values.serviceName}}
             port:
               number: 80
         path: /

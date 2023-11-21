@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{.Values.appName}}
+  name: {{.Values.appName}}
+spec:
+  replicas: {{.Values.replicas}}
+  selector:
+    matchLabels:
+      app: {{.Values.appName}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.appName}}
+    spec:
+      containers:
+        imagePullSecrets: {{Value.imagePullSecretName}}
+      - image: locahost:5000/{{.Values.appName}}
+        name: explorecalifornia-com-bhb66
+        resources: {}
+status: {}

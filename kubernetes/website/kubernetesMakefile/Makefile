@@ -1,5 +1,5 @@
 .PHONY: run_website install_kind create_kind_cluster install_kind create_docker_registry create_kind_cluster_with_registry connect_registry_to_kind \
-	connect_registry_to_kind
+	connect_registry_to_kind install_kubectl
 
 run_website:
 	docker build -t explorecalifornia.com . && \
@@ -37,3 +37,9 @@ connect_registry_to_kind: connect_registry_to_kind_neywork
 
 create_kind_cluster_with_registry:
 	$(MAKE) create_kind_cluster && $(MAKE) connect_registry_to_kind
+
+install_kubectl:
+	brew install kubectl
+
+install_app:
+	helm upgrade --atomic
